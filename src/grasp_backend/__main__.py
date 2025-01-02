@@ -31,7 +31,7 @@ def append_org(
     # https://stackoverflow.com/a/13232181
     if len(org.encode('utf8')) > 4096:
         logger.warning("writing out %s might be non-atomic", org)
-    with path.open('a') as fo:
+    with path.open('a', encoding='utf8') as fo:
         fo.write(org)
 
 
